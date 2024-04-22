@@ -1,0 +1,420 @@
+:root{
+    --primaryFont:  'Ubuntu', sans-serif;
+    --secondaryFont: 'Abril Fatface', serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+a {
+    text-decoration: none;
+}
+ul,ol {
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6,ul,ol,p,span{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #080808;
+    color: #fff;
+}
+/* COMMOM  */
+
+/* NAVBAR */
+
+#mymenu ul li a{
+    
+    line-height: 200%;
+    color: white;
+    text-transform: uppercase;
+    padding: 18px 22px 5px;
+    position: relative;
+    font-family: var(--primaryFont);
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+#mymenu ul li a::before{
+    content: "";
+    width: 0%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: white;
+    transition: 0.3s;
+
+}
+#mymenu ul li:hover a::before{
+    width: 100%;
+}
+
+
+.navbarXy{
+    text-align: right;
+    background: #080808;
+    padding: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    visibility: hidden;
+    opacity: 0;
+}
+.navbarXy button{
+    background-color: turquoise;
+    border: 0;
+    color: white;
+    border-radius: 0;
+    padding: 15px;
+    font-family: var(--primaryFont);
+
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.sidebar{
+    position: fixed;
+    inset: 0;
+    background-color: rgb(220, 208, 208);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.sidebar.active{
+    opacity: 1;
+    visibility: visible;
+}
+.sidecnt{
+    background-color: #fff;
+    max-width: 350px;
+    height: 100vh;
+    padding: 50px 25px;
+    position: relative;
+    transform: translateX(-100%);
+    transition: 0.3s;
+}
+
+.sidebar.active .sidecnt{
+    transform: translateX(0%) ;
+}
+.sidecnt a{
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #080808;
+}
+.sideicon{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+/* banner */
+#banner .content_text{
+    padding-top: 200px;
+}
+
+#banner .content_text h4{
+
+    font-family: var(--primaryFont);
+    font-size: 25px;
+    font-weight: 700;
+    color: #ababab;
+}
+#banner .content_text h1{
+    font-family: var(--secondaryFont);
+    font-size: 60px;
+    font-weight: 700;
+    color: #ababab;
+}
+
+#banner .content_text h1 span{
+    color: red;
+}
+
+#banner .content_photo img{
+
+    padding-top: 50px;
+}
+
+/* about */
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+#about img{
+    width: 450px;
+    border-radius: 15px;
+
+}
+
+#about .about_text h1{
+    font-size: 60px;
+    color: #fff;
+    font-family: var(--primaryFont);
+    margin-bottom: 20px;
+    font-weight: 600;
+
+}
+#about .tab-title{
+    margin: 20px 0 40px;
+    display: flex;
+}
+#about .tab-link{
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--primaryFont);
+    cursor: pointer;
+    position: relative;
+    
+}
+.tab-link::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-link.active-link::after{
+    width: 70%;
+}
+.tab-content ul li{
+    margin: 10px 0;
+}
+.tab-content ul li span{
+    color: #b54769;
+    font-size: 14px;
+    
+
+}
+.tab-content{
+    display: none;
+}
+.tab-content.active-tab{
+    display: block;
+}
+
+/* ---Service */
+#service{
+    padding: 30px 0;
+    
+}
+
+#service .head h1{
+    font-family: var(--primaryFont);
+    font-size: 40px;
+    font-weight: 600 ;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+
+#service .card{
+    background-color: #080808;
+    margin: 45px;
+    box-shadow: rgba(184, 171, 171, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    transition: 0.5s;
+    padding: 15px;
+    height: 300px;
+    
+
+}
+#service .card:hover{
+    background-color: #ff004f;
+    transform: translateY(-10px);
+}
+#service .card-body{
+    padding: 50px 15px;
+}
+
+#service .card h5{
+    font-size: 30px;
+    font-family: var(--primaryFont);
+    margin-bottom: 10px;
+}
+#service .card span i{
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+#service .card .btn{
+    color: #fff;
+    padding: 10px 0 20px 0;
+
+}
+/* my work */
+
+#my-work .header-text h1{
+    font-weight: 600;
+    font-size: 40px;
+    font-family: var(--primaryFont);
+
+}
+#my-work .car_d{
+    position: relative;
+    border: none;
+    background: #080808;
+}
+
+
+#my-work .car_d img{
+    border-radius: 10px;
+    transition: 0.5s;
+    
+}
+
+#my-work .car_d:hover img{
+    transform: scale(1.1);
+}
+ .card_body{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.5),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    font-size: 14px;
+    transform: 0.5s;
+}
+.card_body h5{
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: var(--primaryFont);
+
+}
+ .card_body a{
+    margin-top: 20px;
+    color: #ff004f;
+    font-size: 18px;
+    font-family: var(--primaryFont);
+    line-height: 60px;
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.car_d:hover .card_body{
+    height: 100%;
+}
+.batton{
+    text-align: center;
+    margin: 90px 0;
+}
+.batton a{
+    color: #fff;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    font-size: 18px;
+    font-family: var(--primaryFont);
+    border-radius: 6px;
+    transition: 0.5s;
+
+}
+.batton a:hover{
+    background-color: #ff004f;
+    border: 1px solid #b54769;
+}
+/* Contact */
+
+#contact .h1{
+    font-size: 36px;
+    font-family: var(--primaryFont);
+    margin-bottom: 30px;
+}
+#contact .contact-data .contact-det{
+    margin: 40px 0;
+    
+}
+#contact .contact-data p{
+    margin-top: 30px;
+}
+#contact .contact-data p i{
+    color: #ff004f;
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+#contact .social-icon{
+    margin-top: 30px;
+}
+.social-icon a{
+    font-size: 30px;
+    font-family: var(--primaryFont);
+    margin-right: 15px;
+    color: #ababab;
+    transition:  0.5s;
+    display: inline-block;
+}
+
+.social-icon a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+    
+}
+#contact .contact-btn{
+    
+    margin: 90px 0;
+}
+#contact .contact-btn a{
+    color: #fff;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    background-color: #ff004f;
+    font-size: 16px;
+    font-family: var(--primaryFont);
+
+}
+#contact .right form {
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    font-family: var(--primaryFont);
+    border-radius: 6px;
+    background-color: #262626;
+
+}
+
+#contact .right .sub{
+    padding: 10px 40px;
+    background-color: #ff004f;
+    color: #fff;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: var(--primaryFont);
+    
+
+}
